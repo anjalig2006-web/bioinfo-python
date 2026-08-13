@@ -1,0 +1,36 @@
+def main():
+
+    # Take input of dna sequence
+    dna = input ("Enter the DNA sequence: ").upper().strip()
+    print ("DNA sequence: ",dna)
+
+    # Print complementary string of current dna sequence
+    c = complement(dna)
+    print ("The complement of given DNA sequence is : ",c)
+
+    # Print reverse string of current complementary string
+    r = reverse(c)
+    print ("Reverse of complement sequence is: ",r)
+
+# Generate complementary string of user input dna sequence
+def complement(dna):
+    complement = ""
+    for letter in dna:
+        if letter == "A":
+            complement += "T"
+        elif letter == "T":
+            complement += "A"
+        elif letter == "G":
+            complement += "C"
+        elif letter == "C":
+            complement += "G"
+    return complement
+
+# Generate reverse string of current complementary string
+def reverse (complement):
+    reverse = complement [::-1]
+    return reverse
+
+# Call main
+if __name__ == "__main__":
+    main()
